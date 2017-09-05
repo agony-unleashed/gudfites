@@ -1,0 +1,24 @@
+{
+  "name": "gudfites",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "neutrino build --use neutrino-preset-react",
+    "start": "neutrino start --use neutrino-preset-react",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "neutrino": "^6.1.5",
+    "neutrino-preset-jest": "^6.1.5",
+    "neutrino-preset-react": "^6.1.5",
+    "react-addons-test-utils": "^15.6.0"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
