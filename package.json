@@ -2,7 +2,7 @@
   "name": "gudfites",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "build": "neutrino build --use neutrino-preset-react",
     "start": "neutrino start --use neutrino-preset-react",
