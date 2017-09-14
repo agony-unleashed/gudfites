@@ -14,8 +14,8 @@ export default function App() {
   if (token === 'token') {
     return (
       <div>
-        <DataPicker />
         <form onSubmit={e => logout(e)}><button>Logout</button></form>
+        <DataPicker />
       </div>
     )
   } else {

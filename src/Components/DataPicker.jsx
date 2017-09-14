@@ -1,10 +1,16 @@
 import React from 'react'
 
+import RegionKillList from './RegionKillList'
+
 export default function DataPicker() {
   function handleFetch(e) {
     e.preventDefault()
-    console.log('@fetch', e)
+    const range = e.target.children[0].value
+    const locale = e.target.children[1].value
+    console.log('@fetch', locale, range)
   }
+
+  const mockData = {"status":"success","data":[{"_id":{"regionName":"Black Rise"},"total":15},{"_id":{"regionName":"The Forge"},"total":15}]}
 
   return (
     <div>
@@ -24,6 +30,7 @@ export default function DataPicker() {
         </select>
         <button>Fetch</button>
       </form>
+      <RegionKillList data={mockData.data} />
     </div>
   )
 }
