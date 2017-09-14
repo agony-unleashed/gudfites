@@ -5,12 +5,12 @@ import DataPicker from './DataPicker'
 
 export default function App() {
   // TODO: secure connect to server / implement token access
+  const token = window.localStorage.getItem('accessToken')
+
   function logout(e) {
     window.localStorage.setItem('accessToken', null)
-    console.log(window.localStorage.getItem('accessToken'))
   }
-  const token = window.localStorage.getItem('accessToken')
-  console.log(token)
+
   if (token === 'token') {
     return (
       <div>

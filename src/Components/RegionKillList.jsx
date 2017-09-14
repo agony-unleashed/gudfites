@@ -12,6 +12,7 @@ export default function RegionKillList({ data }) {
       return <h1>No Results</h1>
     }
   }
+
   return (
     <ul>
       {listData()}

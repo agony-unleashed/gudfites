@@ -15,8 +15,8 @@ export default class DataPicker extends React.Component {
 
   handleFetch(e) {
     e.preventDefault()
-    const range = e.target.children[0].value
-    const locale = e.target.children[1].value
+    const range = e.target.children.range.value
+    const locale = e.target.children.locale.value
     console.log('@fetch', locale, range)
     const mockData = {"status":"success","data":[{"_id":{"regionName":"Black Rise"},"total":15},{"_id":{"regionName":"The Forge"},"total":15}]}
     this.setState({
