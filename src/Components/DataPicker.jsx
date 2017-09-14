@@ -9,14 +9,14 @@ export default function DataPicker() {
   return (
     <div>
       <form onSubmit={e => handleFetch(e)}>
-        <select name="range">
+        <select name="range" required>
           <option value="" disabled selected>Range</option>
           <option value="pastHour">Past Hour</option>
           <option value="pastDay">Past Day</option>
           <option value="pastWeek">Past Week</option>
           <option value="pastMonth">Past Month</option>
         </select>
-        <select name="locale">
+        <select name="locale" required>
           <option value="" disabled selected>Locale</option>
           <option value="us">US</option>
           <option value="eu">EU</option>
