@@ -1,5 +1,6 @@
 import React from 'react'
 
+import '../static/dataPicker.css'
 import RegionKillList from './RegionKillList'
 
 export default class DataPicker extends React.Component {
@@ -18,7 +19,12 @@ export default class DataPicker extends React.Component {
     const range = e.target.children.range.value
     const locale = e.target.children.locale.value
     console.log('@fetch', locale, range)
-    const mockData = {"status":"success","data":[{"_id":{"regionName":"Black Rise"},"total":15},{"_id":{"regionName":"The Forge"},"total":15}]}
+    const mockData = {
+      "status":"success","data":[
+        {"_id":{"regionName":"Black Rise"},"total":15},
+        {"_id":{"regionName":"The Forge"},"total":15}
+      ]
+    }
     this.setState({
       range,
       locale,
@@ -29,7 +35,7 @@ export default class DataPicker extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={e => this.handleFetch(e)}>
+        <form className="fetch-form" onSubmit={e => this.handleFetch(e)}>
           <select name="range" required>
             <option value="" disabled selected>Range</option>
             <option value="pastHour">Past Hour</option>
@@ -43,7 +49,7 @@ export default class DataPicker extends React.Component {
             <option value="eu">EU</option>
             <option value="au">AU</option>
           </select>
-          <button>Fetch</button>
+          <button className="fetch-button">Fetch</button>
         </form>
         <RegionKillList data={this.state.data.data} />
       </div>

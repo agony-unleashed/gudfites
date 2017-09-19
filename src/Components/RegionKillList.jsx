@@ -1,21 +1,28 @@
 import React from 'react'
 
+import '../static/regionKillList.css'
+
 export default function RegionKillList({ data }) {
   function listData() {
     try {
       return (
         data.map(region => (
-          <li key={region._id.regionName}>{region._id.regionName} - {region.total}</li>
+          <tr key={region._id.regionName}><td>{region._id.regionName}</td><td>{region.total}</td></tr>
         ))
       )
     } catch (e) {
-      return <h1>No Results</h1>
+      return <tr><td>No Results</td><td></td></tr>
     }
   }
 
   return (
-    <ul>
-      {listData()}
-    </ul>
+    <table>
+      <thead>
+        <tr><th>Region</th><th>Kills</th></tr>
+      </thead>
+      <tbody>
+        {listData()}
+      </tbody>
+    </table>
   )
 }

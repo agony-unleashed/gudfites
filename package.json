@@ -1,24 +1,20 @@
 {
-  "name": "gudfites",
   "version": "1.0.0",
+  "private": true,
   "description": "",
-  "main": "index.jsx",
   "scripts": {
-    "build": "neutrino build --use neutrino-preset-react",
-    "start": "neutrino start --use neutrino-preset-react",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "neutrino start",
+    "build": "neutrino build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Brandon Zarrella",
+  "license": "MIT",
   "devDependencies": {
-    "enzyme": "^2.9.1",
-    "neutrino": "^6.1.5",
-    "neutrino-preset-jest": "^6.1.5",
-    "neutrino-preset-react": "^6.1.5",
-    "react-addons-test-utils": "^15.6.0"
+    "neutrino": "^6.2.0",
+    "neutrino-preset-react": "^6.2.0"
   },
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "3.0.0-beta.7"
   }
 }

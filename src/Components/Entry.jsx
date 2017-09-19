@@ -1,22 +1,29 @@
 import React from 'react'
 
-import DataPicker from './DataPicker'
+import '../static/app.css'
+import Login from './Login'
+import Logout from './Logout'
 
-export default function Entry() {
-  function handleLogin(e) {
-    // e.preventDefault()
-    // TODO: login
-    const fakeToken = 'token'
-    window.localStorage.setItem('accessToken', fakeToken)
-    console.log(window.localStorage.getItem('accessToken'))
+export default class Entry extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loggedIn: false,
+    }
+    this.handleLogin = this.handleLogin.bind(this)
   }
-  return (
-    <div>
-      <h1>Gudfites</h1>
-      <form onSubmit={e => handleLogin(e)} name="login">
-        <input type="password" name="password" placeholder="FAKE password" required />
-        <button>Access</button>
-      </form>
-    </div>
-  )
+  handleLogin(e) {
+    e.preventDefault()
+    this.setState({loggedIn: !this.state.loggedIn})
+    console.log(this.state.loggedIn)
+  }
+
+  render() {
+    const login = <Login onSubmit={e => this.handleLogin(e)} />
+    const logout = <Logout onSubmit={e => this.handleLogin(e)} />
+    const userForm = () => this.state.loggedIn ? login : logout
+    return (
+      <div>{userForm()}</div>
+    )
+  }
 }
