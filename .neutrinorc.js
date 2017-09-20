@@ -1,4 +1,8 @@
 module.exports = {
+  options: {
+    output: 'docs'
+  },
+
   use: [
     'neutrino-preset-react',
     neutrino => neutrino.config
