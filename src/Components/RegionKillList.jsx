@@ -2,8 +2,8 @@ import React from 'react'
 
 import '../static/regionKillList.css'
 
-export default function RegionKillList({ data }) {
-  function listData() {
+export default function RegionKillList ({ data }) {
+  function listData () {
     try {
       return (
         data.map(region => (
@@ -11,7 +11,7 @@ export default function RegionKillList({ data }) {
         ))
       )
     } catch (e) {
-      return <tr><td>No Results</td><td></td></tr>
+      return <tr><td>No Results</td><td /></tr>
     }
   }
 
