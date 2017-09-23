@@ -13,6 +13,7 @@ function App () {
           <li className='login'><Entry /></li>
         </ul>
       </nav>
+
       <DataPicker />
     </div>
   )

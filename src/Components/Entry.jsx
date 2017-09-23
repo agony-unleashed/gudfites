@@ -5,7 +5,7 @@ import Login from './Login'
 import Logout from './Logout'
 
 const removeToken = () => { localStorage.removeItem('gudfitesAccessToken') }
-const storeToken = ({ token }) => { localStorage.setItem('gudfitesAccessToken', token) }
+const storeToken = token => { localStorage.setItem('gudfitesAccessToken', token) }
 
 export default class Entry extends React.Component {
   constructor (props) {
@@ -35,8 +35,6 @@ export default class Entry extends React.Component {
   handleLogin (e) {
     e.preventDefault()
 
-    console.log('data', e.currentTarget)
-
     if (this.state.loggedIn) {
       this.setState({ loggedIn: false })
 
@@ -47,7 +45,11 @@ export default class Entry extends React.Component {
         body: new FormData(e.currentTarget)
       })
         .then(res => res.json())
-        .then(storeToken)
+        .then(res => {
+          storeToken(res.token)
+
+          this.setState({ loggedIn: true })
+        })
         .catch(console.error)
     }
   }
