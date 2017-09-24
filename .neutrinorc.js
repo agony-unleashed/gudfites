@@ -11,4 +11,4 @@ module.exports = {
       .add('react-dom')
       .add('react-hot-loader')
   ]
-};
+}

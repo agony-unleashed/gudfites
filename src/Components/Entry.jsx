@@ -11,17 +11,14 @@ export default class Entry extends React.Component {
   constructor (props) {
     super(props)
 
-    this.state = { loggedIn: false }
-
-    this.handleLogin = this.handleLogin.bind(this)
+    this._handleLogin = this._handleLogin.bind(this)
   }
 
   render () {
-    console.log('state', this.state)
-
-    const UserForm = () => this.state.loggedIn
-      ? <Logout onSubmit={e => this.handleLogin(e)} />
-      : <Login onSubmit={e => this.handleLogin(e)} />
+    console.log(this.props)
+    const UserForm = () => this.props.isLoggedIn
+      ? <Logout onSubmit={e => this._handleLogin(e)} />
+      : <Login onSubmit={e => this._handleLogin(e)} />
 
     return (
       <div>
@@ -32,11 +29,11 @@ export default class Entry extends React.Component {
 
   // -------------------------------------------------------------------------
 
-  handleLogin (e) {
+  _handleLogin (e) {
     e.preventDefault()
 
-    if (this.state.loggedIn) {
-      this.setState({ loggedIn: false })
+    if (this.props.isLoggedIn) {
+      this.props.handleLogin(false)
 
       removeToken()
     } else {
@@ -48,7 +45,7 @@ export default class Entry extends React.Component {
         .then(res => {
           storeToken(res.token)
 
-          this.setState({ loggedIn: true })
+          this.props.handleLogin(true)
         })
         .catch(console.error)
     }

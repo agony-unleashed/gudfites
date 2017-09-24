@@ -20,16 +20,18 @@ export default class DataPicker extends React.Component {
     return (
       <div>
         <form className='fetch-form' onSubmit={e => this.handleFetch(e)}>
-          <select name='range' required>
-            <option value='' disabled selected>Range</option>
+          <h1>solo kills by region</h1>
+
+          <select name='range' defaultValue=''>
+            <option value='' disabled>Range</option>
             <option value='day'>Past Day</option>
             <option value='week'>Past Week</option>
             <option value='month'>Past Month</option>
-            <option value='year'>Past Year</option>
+            {/* <option value='year'>Past Year</option> */}
           </select>
 
-          <select name='locale' required>
-            <option value='' disabled selected>Locale</option>
+          <select name='locale' defaultValue=''>
+            <option value='' disabled>Zone</option>
             <option value='us'>US</option>
             <option value='eu'>EU</option>
             <option value='au'>AU</option>
@@ -69,7 +71,15 @@ export default class DataPicker extends React.Component {
       }
     })
       .then(res => {
-        console.log('res', res)
+        if (res.status === 401) {
+          this.props.handleLogin(false)
+
+          throw new Error('...not logged in')
+        } else {
+          return res
+        }
+      })
+      .then(res => {
         return res.json()
       })
       .then(data => {
@@ -79,6 +89,8 @@ export default class DataPicker extends React.Component {
           range
         })
       })
-      .catch(console.error)
+      .catch(err => {
+        console.error(err)
+      })
   }
 }

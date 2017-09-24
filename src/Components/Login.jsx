@@ -5,6 +5,7 @@ export default function Login ({ onSubmit }) {
     <div>
       <form onSubmit={onSubmit} name='login'>
         <input type='password' name='password' placeholder='password' required />
+
         <button>Access</button>
       </form>
     </div>
