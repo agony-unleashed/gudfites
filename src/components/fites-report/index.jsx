@@ -3,7 +3,7 @@ import React from 'react'
 import '../../static/data-picker.css'
 import RegionKillList from './region-kill-list'
 
-export default class DataPicker extends React.Component {
+export default class FitesReport extends React.Component {
   constructor (props) {
     super(props)
 

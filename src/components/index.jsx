@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 import '../static/app.css'
-import Entry from './entry'
-import DataPicker from './data-picker'
-import NotLoggedIn from './not-logged-in'
+import LoginPortal from './login-portal'
+import FitesReport from './fites-report'
+import Welcome from './welcome'
 
 class App extends Component {
   constructor (props) {
@@ -21,13 +21,13 @@ class App extends Component {
           <ul>
             <li className='title'><span>gudfites</span></li>
 
-            <li className='login'><Entry isLoggedIn={this.state.loggedIn} handleLogin={this.handleLogin} /></li>
+            <li className='login'><LoginPortal isLoggedIn={this.state.loggedIn} handleLogin={this.handleLogin} /></li>
           </ul>
         </nav>
 
         { this.state.loggedIn
-          ? <DataPicker handleLogin={this.handleLogin} />
-          : <NotLoggedIn />
+          ? <FitesReport handleLogin={this.handleLogin} />
+          : <Welcome />
         }
       </div>
     )

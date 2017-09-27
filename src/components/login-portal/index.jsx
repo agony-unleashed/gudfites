@@ -1,13 +1,13 @@
 import React from 'react'
 
 import '../../static/app.css'
-import Login from './login'
-import Logout from './logout'
+import LoginForm from './login-form'
+import LogoutForm from './logout-form'
 
 const removeToken = () => { localStorage.removeItem('gudfitesAccessToken') }
 const storeToken = token => { localStorage.setItem('gudfitesAccessToken', token) }
 
-export default class Entry extends React.Component {
+export default class LoginPortal extends React.Component {
   constructor (props) {
     super(props)
 
@@ -17,8 +17,8 @@ export default class Entry extends React.Component {
   render () {
     console.log(this.props)
     const UserForm = () => this.props.isLoggedIn
-      ? <Logout onSubmit={e => this._handleLogin(e)} />
-      : <Login onSubmit={e => this._handleLogin(e)} />
+      ? <LogoutForm onSubmit={e => this._handleLogin(e)} />
+      : <LoginForm onSubmit={e => this._handleLogin(e)} />
 
     return (
       <div>
