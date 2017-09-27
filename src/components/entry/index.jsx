@@ -1,8 +1,8 @@
 import React from 'react'
 
-import '../static/app.css'
-import Login from './Login'
-import Logout from './Logout'
+import '../../static/app.css'
+import Login from './login'
+import Logout from './logout'
 
 const removeToken = () => { localStorage.removeItem('gudfitesAccessToken') }
 const storeToken = token => { localStorage.setItem('gudfitesAccessToken', token) }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 import '../static/app.css'
-import Entry from './Entry'
-import DataPicker from './DataPicker'
-import NotLoggedIn from './NotLoggedIn'
+import Entry from './entry'
+import DataPicker from './data-picker'
+import NotLoggedIn from './not-logged-in'
 
 class App extends Component {
   constructor (props) {
