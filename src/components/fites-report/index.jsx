@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../static/data-picker.css'
+import '../../static/fites-report.css'
 import RegionKillList from './region-kill-list'
 
 export default class FitesReport extends React.Component {

@@ -1,16 +1,40 @@
 body {
+  background-color: rgb(209, 209, 209);
   font-family: monospace;
   margin: 0;
 }
 
 button {
+  background-color: rgb(42, 42, 42);
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px black;
+  color: white;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 20px;
+  height: 30px;
+  margin: 10px;
+  padding: 5;
+  text-align: center;
+  vertical-align: middle;
+}
+
+button:hover {
+ background-color: rgb(89, 136, 193);
+}
+
+input {
   border: 0;
   border-radius: 2px;
   display: inline-block;
   font-family: monospace;
+  height: 35px;
+  margin-right: 5px;
   padding: 0;
   text-align: center;
   vertical-align: middle;
+  width: 100px;
 }
 
 li {
@@ -22,32 +46,6 @@ nav {
   box-shadow: 0 1px 20px black;
   margin: auto;
   padding: 10px;
-}
-
-nav button {
-  background-color: white;
-  font-size: 20px;
-  height: 35px;
-  margin-left: 5px;
-  width: 100px;
-}
-
-nav button:hover {
- background-color: rgb(89, 136, 193);
- color: white;
-}
-
-nav input {
-  border: 0;
-  border-radius: 2px;
-  display: inline-block;
-  font-family: monospace;
-  height: 35px;
-  margin-right: 5px;
-  padding: 0;
-  text-align: center;
-  vertical-align: middle;
-  width: 100px;
 }
 
 ul {
@@ -63,9 +61,19 @@ ul {
   text-align: center;
 }
 
+.nav-item-right {
+  display: block;
+  float: right;
+  text-align: center;
+}
+
 .title {
   color: rgb(89, 136, 193);
   font-size: 34px;
   margin: 0;
   padding: 0;
+}
+
+.text-center {
+  text-align: center;
 }
