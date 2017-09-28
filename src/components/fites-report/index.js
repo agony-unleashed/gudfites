@@ -10,7 +10,7 @@ export default class FitesReport extends React.Component {
     this.state = {
       'range': '',
       'locale': '',
-      'data': {}
+      'data': []
     }
 
     this.handleFetch = this.handleFetch.bind(this)
@@ -41,8 +41,7 @@ export default class FitesReport extends React.Component {
 
           <button className='fetch-button'>Fetch</button>
         </form>
-
-        <RegionKillList data={this.state.data.data} />
+        <RegionKillList data={this.state.data} />
       </div>
     )
   }
@@ -86,9 +85,9 @@ export default class FitesReport extends React.Component {
       .then(res => {
         return res.json()
       })
-      .then(data => {
+      .then(resObj => {
         this.setState({
-          data,
+          data: resObj.data,
           locale,
           range
         })
