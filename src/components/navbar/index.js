@@ -1,13 +1,13 @@
 import React from 'react'
 
-import '../../static/app.css'
+import '../../static/navbar.css'
 
-export default function Navbar (props) {
+export default function Navbar ({ children }) {
   return (
     <nav>
-      <ul>
-        <li className='title'><span>gudfites</span></li>
-        <li className='nav-item-right'>{props.children}</li>
+      <ul className="nav-items">
+        <li className='nav-title'><a href="/">gudfites</a></li>
+        <li className='nav-item-right'>{children}</li>
       </ul>
     </nav>
   )

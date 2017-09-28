@@ -1,0 +1,32 @@
+nav {
+  background-color: rgb(42, 42, 42);
+  box-shadow: 0 1px 20px black;
+  margin: auto;
+  padding: 10px;
+}
+
+.nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li {
+  display: inline-block;
+}
+
+.nav-item-right {
+  float: right;
+  margin-top: 4px;
+}
+
+.nav-title {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-title a {
+  color: rgb(89, 136, 193);
+  font-size: 34px;
+  text-decoration: none;
+}

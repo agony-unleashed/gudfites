@@ -18,3 +18,7 @@ select:hover {
   margin: 20px;
   text-align: center;
 }
+
+.fetch-form button {
+  margin: 10px;
+}
