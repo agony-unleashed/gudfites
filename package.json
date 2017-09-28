@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "neutrino start",
-    "build": "neutrino build"
+    "build": "neutrino build && cp ./CNAME ./docs/CNAME"
   },
   "author": "Brandon Zarrella",
   "license": "MIT",
