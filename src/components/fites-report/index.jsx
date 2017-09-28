@@ -1,9 +1,9 @@
 import React from 'react'
 
-import '../static/dataPicker.css'
-import RegionKillList from './RegionKillList'
+import '../../static/fites-report.css'
+import RegionKillList from './region-kill-list'
 
-export default class DataPicker extends React.Component {
+export default class FitesReport extends React.Component {
   constructor (props) {
     super(props)
 

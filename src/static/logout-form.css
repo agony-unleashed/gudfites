@@ -1,0 +1,10 @@
+.logout-form button {
+  background-color: white;
+  box-shadow: none;
+  color: rgb(42, 42, 42);
+}
+
+.logout-form button:hover {
+  background-color: rgb(89, 136, 193);
+  color: white;
+}

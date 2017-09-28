@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../static/regionKillList.css'
+import '../../../static/region-kill-list.css'
 
 export default function RegionKillList ({ data }) {
   function listData () {
