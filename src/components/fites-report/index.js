@@ -22,19 +22,21 @@ export default class FitesReport extends React.Component {
         <form className='fetch-form' onSubmit={e => this.handleFetch(e)}>
           <h1>solo kills by region</h1>
 
-          <select name='range' defaultValue=''>
-            <option value='' disabled>Range</option>
+          <label htmlFor='fetch-range'>Range</label>
+          <select id='fetch-range'name='range' defaultValue=''>
+            <option value=''>All</option>
             <option value='day'>Past Day</option>
             <option value='week'>Past Week</option>
             <option value='month'>Past Month</option>
-            {/* <option value='year'>Past Year</option> */}
           </select>
 
-          <select name='locale' defaultValue=''>
-            <option value='' disabled>Zone</option>
-            <option value='us'>US</option>
-            <option value='eu'>EU</option>
+          <label htmlFor='fetch-locale'>Zone</label>
+          <select id='fetch-locale' name='locale' defaultValue=''>
+            <option value={null} disabled>Zone</option>
+            <option value=''>All</option>
             <option value='au'>AU</option>
+            <option value='eu'>EU</option>
+            <option value='us'>US</option>
           </select>
 
           <button className='fetch-button'>Fetch</button>
@@ -72,7 +74,9 @@ export default class FitesReport extends React.Component {
     })
       .then(res => {
         if (res.status === 401) {
-          this.props.handleLogin(false)
+          localStorage.removeItem('gudfitesAccessToken')
+
+          this.props.handleLogout(false)
 
           throw new Error('...not logged in')
         } else {

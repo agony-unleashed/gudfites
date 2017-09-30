@@ -4,7 +4,14 @@ module.exports = {
   },
 
   use: [
-    'neutrino-preset-react',
+    ['neutrino-preset-react',
+      {
+        html: {
+          title: 'gudfites'
+        }
+      }
+    ],
+
     neutrino => neutrino.config
       .entry('vendor')
       .add('react')

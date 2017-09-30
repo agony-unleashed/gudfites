@@ -18,7 +18,7 @@ class App extends Component {
 
   render () {
     const { isLoggedIn } = this.state
-    const ifLoggedIn = (element, altElement) => (isLoggedIn ? element : altElement)
+
     const Home = () => {
       return (
         <div>
@@ -30,8 +30,18 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar>{ifLoggedIn(<UserPortal handleLogout={this.handleLoginState} />)}</Navbar>
-        {ifLoggedIn(<FitesReport />, <Home />)}
+        <Navbar>
+          { isLoggedIn
+              ? <UserPortal handleLogout={this.handleLoginState} />
+              : null
+          }
+        </Navbar>
+
+        {
+          isLoggedIn
+            ? <FitesReport handleLogout={this.handleLoginState} />
+            : <Home />
+        }
       </div>
     )
   }
