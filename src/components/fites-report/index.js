@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import '../../static/fites-report.css'
 import RegionKillList from './region-kill-list'
 
-export default class FitesReport extends React.Component {
+export default class FitesReport extends Component {
   constructor (props) {
     super(props)
 

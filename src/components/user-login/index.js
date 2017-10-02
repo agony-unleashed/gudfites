@@ -8,7 +8,7 @@ export default class UserLogin extends Component {
     super(props)
     this.state = {
       password: '',
-      loginError: false,
+      loginError: false
     }
 
     this.handleLogin = this.props.handleLogin.bind(this)
@@ -40,7 +40,7 @@ export default class UserLogin extends Component {
   handleLoginError() {
     this.setState({
       loginError: true,
-      password: '',
+      password: ''
     })
   }
 
